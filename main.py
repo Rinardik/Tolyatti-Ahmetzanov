@@ -4,12 +4,14 @@ from PyQt6.QtGui import QPainter, QColor
 from PyQt6 import QPoint
 from PyQt6.QtWidgets import QMainWindow, QApplication, QPushButton
 from PyQt6 import uic
+from ui import Ui_MainWindow
 
-class Example(QWidget):
+class Example(QWidget, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
-        uic.loadUi('UI.ui', self)
+        # uic.loadUi('UI.ui', self)
+        self.setupUi(self)
         self.setWindowTitle('Рисование')
         self.btn.clicked.connect(self.paint)
         self.do_paint = False
