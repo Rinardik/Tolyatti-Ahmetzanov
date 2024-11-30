@@ -26,14 +26,14 @@ class Example(QWidget, Ui_MainWindow):
 
     def paint(self):
         self.do_paint = True
-        self.update()
+
 
     def draw_flag(self, qp):
         R = randint(20, 100)
         x = randint(0, 500)
         y = randint(0, 500)
-        self.qp.serBrush(QColor(255, 255, 0))
-        self.qp.drawEllipse(QPoint(x, y), R / 2, R / 2)
+        qp.serBrush(QColor(255, 255, 0))
+        qp.drawEllipse(QPoint(x, y), R / 2, R / 2)
 
 
 if __name__ == '__main__':
